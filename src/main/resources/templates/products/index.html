@@ -30,7 +30,10 @@
       <td th:text="${product.name}"></td>
       <td th:text="${product.brand}"></td>
       <td th:text="${product.category}"></td>
-      <td th:text="@{${product.price} + '원'}"></td>
+<!--      <td th:text="@{${product.price} + '원'}"></td>-->
+      <td th:text="|${#numbers.formatInteger(product.price,0,'COMMA' )}원|"></td>
+
+
       <td>
         <img th:src="@{'/images/'+${product.imageFileName}}" width="100">
       </td>

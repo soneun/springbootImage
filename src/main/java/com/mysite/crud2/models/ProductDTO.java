@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Getter
 @Setter
+@ToString
 //유저에게 제품 입력을 받는 객체
 public class ProductDTO {
 
@@ -26,8 +27,7 @@ public class ProductDTO {
     @Min(value = 0, message = "가격을 입력하세요")
     private int price;
 
-    @Size(min = 10, message = "제품설명은 10자 이상")
-    @Size(max = 100, message = "제품설명은 100자 이하")
+    @Size(min = 10, max = 100, message = "제품설명은 10자 이상 100자 이하")
     private String description;
 
     //날짜는 현재날짜시간으로 자동입력됨
